@@ -1,0 +1,70 @@
+{  
+   "data":[  
+      {  
+         "employee_name":"john",
+         "staff_id":"123456",
+         "department":"Mechanical Engineering",
+         "email_address":"john@gmail.com",
+         "job_title":"Graduate",
+         "rank":"faculty",
+         "joining_date":"1111-09-11T00:00:00.000+03:00",
+         "emp_user_name":"john",
+         "mobile_number":{  
+            "@nil":"true"
+         },
+         "sch_start_dt_g":{  
+            "@nil":"true"
+         },
+         "country_e":{  
+            "@nil":"true"
+         },
+         "univ_name_e":{  
+            "@nil":"true"
+         }
+      },
+      {  
+         "employee_name":"johny",
+         "staff_id":"123456",
+         "department":"Aerospace Engineering",
+         "email_address":"johny@gmail.com",
+         "job_title":"Lecturer",
+         "rank":"faculty",
+         "joining_date":"1111-09-11T00:00:00.000+03:00",
+         "emp_user_name":"john",
+         "mobile_number":{  
+            "@nil":"true"
+         },
+         "sch_start_dt_g":{  
+            "@nil":"true"
+         },
+         "country_e":{  
+            "@nil":"true"
+         },
+         "univ_name_e":{  
+            "@nil":"true"
+         }
+      },
+      {  
+         "employee_name":"tom",
+         "staff_id":"123456",
+         "department":"Electrical Engineering",
+         "email_address":"Tom@gmail.com",
+         "job_title":"Dean, Graduate Studies ",
+         "rank":"faculty",
+         "joining_date":"1111-09-11T00:00:00.000+03:00",
+         "emp_user_name":"john",
+         "mobile_number":{  
+            "@nil":"true"
+         },
+         "sch_start_dt_g":{  
+            "@nil":"true"
+         },
+         "country_e":{  
+            "@nil":"true"
+         },
+         "univ_name_e":{  
+            "@nil":"true"
+         }
+      }
+   ]
+}
