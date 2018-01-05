@@ -2,7 +2,7 @@
    "data":[  
       {  
          "employee_name":"john",
-         "staff_id":"123456",
+         "staff_id":"1",
          "department":"Mechanical Engineering",
          "email_address":"john@gmail.com",
          "job_title":"Graduate",
@@ -24,7 +24,7 @@
       },
       {  
          "employee_name":"johny",
-         "staff_id":"123456",
+         "staff_id":"12",
          "department":"Aerospace Engineering",
          "email_address":"johny@gmail.com",
          "job_title":"Lecturer",
@@ -46,7 +46,7 @@
       },
       {  
          "employee_name":"tom",
-         "staff_id":"123456",
+         "staff_id":"123",
          "department":"Electrical Engineering",
          "email_address":"Tom@gmail.com",
          "job_title":"Dean, Graduate Studies ",

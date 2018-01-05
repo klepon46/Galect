@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.galect.bean.College;
@@ -24,7 +25,7 @@ import com.galectapp.model.Employee;
 
 @Controller
 @RequestMapping("/galect")
-public class DeanshipController {
+public class DeanController {
 
 	@Autowired
 	private CollegeRepo collegeRepo;
@@ -32,39 +33,25 @@ public class DeanshipController {
 	@Autowired
 	private DepartmentRepo departmentRepo;
 
-	@RequestMapping("/deanship")
-	public String deanship(Model model) {
-		Deanship deanship = new Deanship();
+	@RequestMapping("/dean/{collegeID}")
+	public String dean(@PathVariable("collegeID") String collegeID, Model model, HttpServletRequest request) {
 
-		List<College> colleges = collegeRepo.findAll();
+		request.getSession().setAttribute("collegeID", collegeID);
 
-		model.addAttribute("college", deanship);
-		model.addAttribute("departement", new Deanship());
-		model.addAttribute("colleges", colleges);
-
-		return "deanship";
-	}
-
-	@RequestMapping("/onSelectCollege")
-	public String onSelectCollege(@ModelAttribute("college") Deanship deanship, Model model,
-			HttpServletRequest request) {
-
-		request.getSession().setAttribute("collegeID", deanship.getCollege());
 		Deanship departement = new Deanship();
 
-		int id = Integer.valueOf(deanship.getCollege());
+		int id = Integer.valueOf(collegeID);
 		List<College> colleges = collegeRepo.findAll();
 		List<Department> deps = departmentRepo.findByCollegeID(id);
 
-		model.addAttribute("college", deanship);
 		model.addAttribute("departement", departement);
 		model.addAttribute("colleges", colleges);
 		model.addAttribute("deps", deps);
 
-		return "deanship";
+		return "dean";
 	}
 
-	@RequestMapping("/onSelectDepartment")
+	@RequestMapping("/dean/onSelectDepartment")
 	public String onSelectDepartment(@ModelAttribute("departement") Deanship deanship, Model model,
 			HttpServletRequest request) {
 
@@ -85,18 +72,13 @@ public class DeanshipController {
 		}
 
 		String id = (String) request.getSession().getAttribute("collegeID");
-		List<College> colleges = collegeRepo.findAll();
 		List<Department> deps = departmentRepo.findByCollegeID(Integer.valueOf(id));
 
-		Deanship college = new Deanship();
-		college.setCollege(id);
-
-		model.addAttribute("college", college);
 		model.addAttribute("departement", deanship);
-		model.addAttribute("colleges", colleges);
 		model.addAttribute("employees", employees);
 		model.addAttribute("deps", deps);
 
-		return "deanship";
+		return "dean";
 	}
+
 }

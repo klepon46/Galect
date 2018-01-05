@@ -68,7 +68,7 @@ public class JsonParser {
 	public Employee parseJsonToModel() {
 		employee = new Employee();
 		employee.setEmployeeName((String) jo.get("employee_name"));
-		employee.setStaffID((String) jo.get("123456"));
+		employee.setStaffID((String) jo.get("staff_id"));
 		employee.setDepartment((String) jo.get("department"));
 		employee.setEmailAdress((String) jo.get("email_address"));
 		employee.setJobTitle((String) jo.get("job_title"));
